@@ -1,0 +1,20 @@
+name: Support
+main: ru.mishaneyt.support.SupportPlugin
+version: '${version}'
+
+author: MishaNeYT
+api-version: '1.16'
+
+commands:
+  support:
+    usage: /support {args}
+    description: Main support command
+    permission: support.command.use
+
+permissions:
+  support.command.*:
+    default: op
+    children:
+      - support.command.create
+  support.command.create:
+    description: Usage /support create
