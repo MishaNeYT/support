@@ -19,6 +19,12 @@ public final class BaseIssue extends Button implements Issue {
   private OfflinePlayer employee;
   private IssueStatus status;
 
+  /**
+   * Constructor for creating a new support issue.
+   *
+   * @param author the player who created the issue.
+   * @param reason the reason for creating the issue.
+   */
   public BaseIssue(final OfflinePlayer author, final String reason) {
     this.author = author;
     this.reason = reason;

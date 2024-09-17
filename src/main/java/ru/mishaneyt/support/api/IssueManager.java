@@ -17,8 +17,8 @@ public interface IssueManager {
    * complete with the newly created {@link Issue}. This allows for non-blocking
    * execution and handling of the result once the issue has been created.
    *
-   * @param player the player for whom the issue is being created
-   * @param reason a string representing the reason for create the issue
+   * @param player the player for whom the issue is being created.
+   * @param reason a string representing the reason for create the issue.
    * @return a {@link CompletableFuture} that will complete with the created {@link Issue}
    */
   CompletableFuture<Issue> createIssue(final @NotNull OfflinePlayer player, final String reason);
@@ -30,8 +30,8 @@ public interface IssueManager {
    * complete with the closed {@link Issue}. This allows for non-blocking execution
    * and handling of the result once the issue has been closed.
    *
-   * @param player the player for whom the issue is being closed
-   * @param reason a string representing the reason for closing the issue
+   * @param player the player for whom the issue is being closed.
+   * @param reason a string representing the reason for closing the issue.
    * @return a {@link CompletableFuture} that will complete with the closed {@link Issue}
    */
   CompletableFuture<Issue> closeIssue(final @NotNull OfflinePlayer player, final String reason);

@@ -25,6 +25,11 @@ import java.util.List;
 @AutoUpdate(value = 20)
 public class BaseIssuesPaginatedMenu extends PaginatedMenu {
 
+  /**
+   * Constructor for the paginated menu displaying support issues.
+   *
+   * @param player the player for whom the menu is being created.
+   */
   public BaseIssuesPaginatedMenu(final @NotNull Player player) {
     super("Issues", MenuSize.FIVE, player);
   }
@@ -37,6 +42,12 @@ public class BaseIssuesPaginatedMenu extends PaginatedMenu {
     background.set(Menu.COLUMNS - 1, getRows() - 3, new NextPageButton(this));
   }
 
+  /**
+   * Retrieves the entries (issues) to be displayed in the paginated menu.
+   * It converts each issue into a Button to be used in the menu.
+   *
+   * @return a list of Buttons representing the issues.
+   */
   @Override
   public List<Button> getEntries() {
     return SupportPlugin.getPlugin().getIssueManager().getIssues().values().stream()
