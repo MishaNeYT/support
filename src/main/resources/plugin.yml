@@ -1,6 +1,6 @@
 name: Support
 main: ru.mishaneyt.support.SupportPlugin
-version: '${version}'
+version: 1.0.0-SNAPSHOT
 
 author: MishaNeYT
 api-version: '1.16'
@@ -16,5 +16,8 @@ permissions:
     default: op
     children:
       - support.command.create
+      - support.command.menu
   support.command.create:
     description: Usage /support create
+  support.command.menu:
+    description: Usage /support menu

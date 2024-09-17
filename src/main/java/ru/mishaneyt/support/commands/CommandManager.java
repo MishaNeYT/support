@@ -43,10 +43,6 @@ public final class CommandManager implements CommandExecutor, TabCompleter {
    */
   public static void registerCommand(@NotNull final JavaPlugin plugin, @NotNull final String label,
                                      @NotNull final List<Class<? extends ISubCommand>> subCommands) {
-    Validate.notNull(plugin, "Specify the main class that extends JavaPlugin.");
-    Validate.notNull(label, "Specify the name of the command.");
-    Validate.notNull(subCommands, "Specify the arguments of the command.");
-
     var commandManager = new CommandManager();
     var command = plugin.getCommand(label);
     Validate.notNull(command, "Could not find the command in `plugins.yml`.");

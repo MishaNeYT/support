@@ -1,13 +1,17 @@
 package ru.mishaneyt.support.base;
 
+import gg.voided.api.menu.button.Button;
 import org.bukkit.OfflinePlayer;
 
+import org.bukkit.inventory.ItemStack;
+import org.jetbrains.annotations.NotNull;
 import ru.mishaneyt.support.api.Issue;
 import ru.mishaneyt.support.api.IssueStatus;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 
-public final class BaseIssue implements Issue {
+public final class BaseIssue extends Button implements Issue {
   private final OfflinePlayer author;
   private final LocalDateTime dateTime;
   private final String reason;
@@ -19,8 +23,15 @@ public final class BaseIssue implements Issue {
     this.author = author;
     this.reason = reason;
 
+    this.employee = null;
     this.dateTime = LocalDateTime.now();
-    this.status = IssueStatus.OPENED;
+
+    this.setStatus(IssueStatus.OPENED);
+  }
+
+  @Override
+  public ItemStack getIcon() {
+    return this.status.getItemStack();
   }
 
   @Override
@@ -29,13 +40,18 @@ public final class BaseIssue implements Issue {
   }
 
   @Override
+  public LocalDateTime getDateTime() {
+    return dateTime;
+  }
+
+  @Override
   public String getReason() {
     return reason;
   }
 
   @Override
-  public OfflinePlayer getEmployee() {
-    return employee;
+  public Optional<OfflinePlayer> getEmployee() {
+    return Optional.ofNullable(employee);
   }
 
   @Override
@@ -49,7 +65,18 @@ public final class BaseIssue implements Issue {
   }
 
   @Override
-  public void setStatus(final IssueStatus status) {
+  public void setStatus(final @NotNull IssueStatus status) {
     this.status = status;
+    switch (status) {
+      case OPENED -> {
+        // A
+      }
+      case BUSY -> {
+        // B
+      }
+      case CLOSED -> {
+        // C
+      }
+    }
   }
 }

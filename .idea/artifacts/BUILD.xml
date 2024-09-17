@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="BUILD">
+    <output-path>$USER_HOME$/Desktop/EasyPvP/plugins</output-path>
+    <root id="archive" name="Support.jar">
+      <element id="module-output" name="support.main" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.VoidedNetwork/MenuAPI/1.2/8cefe8bb39a585d42694f653b02426624ed523ed/MenuAPI-1.2.jar" path-in-jar="/" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/resources/plugin.yml" />
+    </root>
+  </artifact>
+</component>

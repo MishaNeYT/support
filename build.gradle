@@ -2,9 +2,6 @@ plugins {
     id 'java'
 }
 
-group = 'ru.mishaneyt'
-version = '1.0.0-SNAPSHOT'
-
 repositories {
     mavenCentral()
     maven {
@@ -15,10 +12,16 @@ repositories {
         name = "sonatype"
         url = "https://oss.sonatype.org/content/groups/public/"
     }
+    maven {
+        url = uri("https://jitpack.io")
+    }
 }
 
 dependencies {
-    compileOnly "com.destroystokyo.paper:paper-api:1.16.5-R0.1-SNAPSHOT"
+    compileOnly("com.destroystokyo.paper:paper-api:1.16.5-R0.1-SNAPSHOT")
+
+    // https://github.com/VoidedNetwork/MenuAPI
+    implementation("com.github.VoidedNetwork:MenuAPI:1.2")
 }
 
 def targetJavaVersion = 17

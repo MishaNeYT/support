@@ -2,6 +2,9 @@ package ru.mishaneyt.support.api;
 
 import org.bukkit.OfflinePlayer;
 
+import java.time.LocalDateTime;
+import java.util.Optional;
+
 public interface Issue {
 
   /**
@@ -14,13 +17,19 @@ public interface Issue {
    *
    * @return
    */
+  LocalDateTime getDateTime();
+
+  /**
+   *
+   * @return
+   */
   String getReason();
 
   /**
    *
    * @return
    */
-  OfflinePlayer getEmployee();
+  Optional<OfflinePlayer> getEmployee();
 
   /**
    *
